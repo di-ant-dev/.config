@@ -72,7 +72,7 @@ button:hover {
     background-color: @bg_highlighted;
 }
 
-#pulseaudio, #cpu, #temperature, #backlight {
+#pulseaudio, #cpu, #temperature, #backlight, #battery {
     min-width: 110px;
 }
 
