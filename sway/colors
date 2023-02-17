@@ -1,0 +1,5 @@
+client.background #0d131f
+client.focused #0d131f #0d131f #cbccc6 #ffcc66 #3d424d
+client.unfocused #0d131f #0d131f #cbccc6 #141824 #141824
+client.focused_inactive #0d131f #0d131f #cbccc6 #141824 #141824
+client.urgent #0d131f #0d131f #cbccc6 #ff6666 #ff6666

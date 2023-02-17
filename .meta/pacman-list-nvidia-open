@@ -1,0 +1,5 @@
+nvidia-open
+nvidia-prime
+nvidia-settings
+lib32-nvidia-utils
+lib32-vulkan-icd-loader

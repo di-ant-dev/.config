@@ -1,0 +1,9 @@
+iwd 
+systemd-networkd
+systemd-resolved
+ufw
+tlp
+bluetooth
+seatd
+systemd-timesyncd
+fstrim.timer

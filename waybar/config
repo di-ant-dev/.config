@@ -1,0 +1,72 @@
+{
+    "position": "top",
+    "disable-scroll": "true",
+    "height": 32,
+    "spacing": 4,
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": [],
+    "modules-right": ["tray", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "sway/language", "battery", "clock" ],
+
+    "sway/mode": {
+        "format": "{}"
+    },
+
+    "pulseaudio": {
+        "scroll-step": 1,
+        "format": "vol: {volume}%",
+        "format-muted": "vol: muted",
+        "format-bluetooth": "vol(bt): {volume}%",
+        "format-bluetooth-muted": "vol(bt): muted",
+        "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
+        "on-click-right": "pavucontrol"
+    },
+
+    "network": {
+        "format-wifi": "wifi: {signalStrength}%",
+        "format-ethernet": "eth",
+        "tooltip-format": "{ifname}: {essid}@{ipaddr}",
+        "format-linked": "{ifname} (No IP)",
+        "format-disconnected": "discon",
+        "on-click": "foot iwctl"
+    },
+
+    "cpu": {
+        "format": "cpu: {usage}%",
+        "tooltip": false
+    },
+
+    "memory": {
+        "format": "mem: {used}GiB",
+        "tooltip": false
+    },
+
+    "temperature": {
+        "format": "temp: {temperatureC}°C"
+    },
+    
+    "backlight": {
+        "on-scroll-up": "light -A 1",
+        "on-scroll-down": "light -U 1",
+        "format": "bl: {percent}%"
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+    "battery": {
+        "format": "bat: {capacity}%",
+        "format-charging": "bat(^): {capacity}%",
+        "format-plugged": "bat(v): {capacity}%",
+        "format-full": "bat(f): {capacity}%"
+    },
+
+    "clock": {
+        "timezone": "Asia/Almaty",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    }
+
+}
+

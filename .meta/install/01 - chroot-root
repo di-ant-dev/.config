@@ -1,0 +1,48 @@
+# turn off bell if needed
+/etc/inputrc
+
+# time
+ln -sf /usr/share/zoneinfo/|Region|/|City| /etc/localtime
+
+# locale
+# uncomment needed locale
+/etc/locale.gen
+locale-gen
+
+# !see fs-mirrot-root
+/etc/locale.conf
+/etc/console.conf
+/etc/hostname
+
+# root password
+passwd
+
+# bootloader
+bootctl install
+# !see fs-mirror-root
+/boot/loader/loader.conf
+/boot/loader/entries/*
+# do not forget to change uuid to yours
+
+# edit parallel downloads (now on installed)
+# uncomment multilib
+/etc/pacman.conf
+
+# !see pacman-list
+pacman -S |package| |package|
+
+# !see fs-mirror-root
+/etc/iwd/main.conf
+/etc/tlp.conf
+
+# !see services.root
+systemctl enable |service|
+
+# add user !see groups
+useradd -m -G |group,group,group| |username|
+passwd |username|
+
+# uncomment wheel access
+/etc/sudoers
+
+su |username|

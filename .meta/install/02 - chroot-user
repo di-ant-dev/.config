@@ -1,0 +1,9 @@
+# minimum brightness
+light -N 5
+
+# !see services.user
+systemctl --user enable |service|
+
+exit
+exit
+reboot

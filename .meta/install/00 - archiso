@@ -1,0 +1,38 @@
+# turn off bell if needed
+/etc/inputrc
+
+loadkeys us
+
+# verify efi boot
+ls /sys/firmware/efi/efivars
+
+# verify timesync
+timedatectl status
+
+# internet
+rfkill unblock wifi
+iwctl station |adapter| connect |wifi|
+
+# partition
+fdisk |device|
+
+# format
+mkfs.fat -F 32 |boot|
+mkfs.ext4 |root|
+
+# mount
+mount |root| /mnt
+mount |boot| /mnt/boot --mkdir
+
+# edit parallel downloads
+/etc/pacman.conf
+
+# kickstart
+# --- DO NOT FORGET TO ADD ucode AND video driver ---
+pacstrap -K /mnt base base-devel linux linux-firmware
+
+# fstab
+genfstab -U /mnt > /mnt/etc/fstab
+
+# enter
+arch-chroot /mnt

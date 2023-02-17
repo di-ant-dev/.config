@@ -1,0 +1,4 @@
+sudo ufw default deny
+sudo ufw enable
+
+rfkill unblock things

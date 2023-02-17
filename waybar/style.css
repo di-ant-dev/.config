@@ -1,0 +1,128 @@
+@import "colors.css";
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: JetBrainsMono;
+    font-size: 16px;
+    color: @text;
+}
+
+window#waybar {
+    background-color: @bg;
+    transition-duration: .0s;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+button {
+    box-shadow: none;
+    border: none;
+    border-radius: 8px;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: none;
+}
+
+#workspaces button {
+    min-width: 32px;
+    padding: 0 0px;
+    background-color: transparent;
+    color: #ffffaa;
+}
+
+#workspaces button.focused {
+    background-color: @bg_highlighted;
+    color: @text_highlighted;
+}
+
+#workspaces button.urgent {
+    background-color: @bg_urgent;
+    color: @text_urgent;
+}
+
+#mode {
+    border-radius: 8px;
+    background-color: @bg_highlighted;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#backlight,
+#network,
+#pulseaudio,
+#wireplumber,
+#custom-media,
+#tray,
+#mode,
+#idle_inhibitor,
+#scratchpad,
+#mpd {
+    padding: 0 10px;
+    color: @text;
+    border-radius: 8px;
+    margin: 4px 4px;
+    background-color: @bg_highlighted;
+}
+
+#pulseaudio, #cpu, #temperature, #backlight {
+    min-width: 110px;
+}
+
+#memory, #network {
+    min-width: 140px;
+}
+
+
+#window,
+#workspaces {
+    margin: 4px 4px;
+}
+
+#battery.charging, #battery.plugged {
+    color: @text;
+    background-color: #26A65B;
+}
+
+#battery.critical:not(.charging) {
+    background-color: @bg_urgent;
+    color: @text_urgent;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+    background-color: @bg_urgent;
+    color: @text_urgent;
+}
+
+#language {
+    color: @text;
+    background-color: @bg_highlighted;
+    border-radius: 8px;
+    padding: 0 0;
+    margin: 4px 4px;
+    min-width: 48px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
